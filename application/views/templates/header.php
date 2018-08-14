@@ -6,7 +6,7 @@
     <nav class="navbar navbar-inverse">
             <div class="container" >
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">blog</a>
+                    <h1><a class="navbar-brand" href="#">blog</a></h1>
                 </div>
                 <div id="navbar" >
                     <ul class="nav navbar-nav">

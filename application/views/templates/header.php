@@ -7,7 +7,7 @@
     <nav class="navbar navbar-inverse">
             <div class="container" >
                 <div class="navbar-header">
-                    <h1><a class="navbar-brand" href="#">Galaxy blog</a></h1>
+                    <h1><a class="navbar-brand" href="<?= base_url();?>posts">Galaxy blog</a></h1>
                 </div>
                 <div class="nav" >
                         <li><a href="<?= base_url();?>">Home</a></li>&nbsp;&nbsp;	

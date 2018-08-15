@@ -3,26 +3,33 @@
         public function __construct(){
             $this->load->database();
         }
+
         public function get_posts($slug = FALSE){
             if($slug === FALSE){
-                $this->db->order_by('ID', 'DESC');
+                $this->db->order_by('posts.created_at', 'DESC');
+                $this->db->join('categories', 'categories.id = posts.categorie_id');
                 $query = $this->db->get('posts');
                 return $query->result_array();
             }
+            $this->db->join('categories', 'categories.id = posts.categorie_id');
             $query = $this->db->get_where('posts', array('slug'=> $slug));
             return $query->row_array();
         }
-        public function create_post(){
-            $slug = url_title($this->input->post('title'));
+
+        public function create_post($post_image){
+            $slug = url_title($this->input->post('title')); 
 
             $data = array(
                 'title' => $this->input->post('title'),
                 'slug' => $slug,
                 'body' => $this->input->post('body'),
-                'created_at' => date('Y/m/d h:i:sa')
+                'created_at' => date('Y/m/d h:i:sa'),
+                'categorie_id' => $this->input->post('category_id'),
+                'post_image' => $post_image
             );
             return $this->db->insert('posts', $data);
         }
+
         public function delete_post($id){
             $this->db->where('id', $id);
             $this->db->delete('posts');
@@ -38,9 +45,16 @@
                 'slug' => $slug,
                 'body' => $this->input->post('body'),
                 'created_at' => date('Y/m/d h:i:sa'),
-                'edited' => $edited
+                'edited' => $edited,
+                'categorie_id' => $this->input->post('category_id')
             );
             $this->db->where('id', $id);
             return $this->db->update('posts', $data);
         }
+        public function get_categories(){
+            $this->db->order_by('name');
+            $query = $this->db->get('categories');
+            return $query->result_array();
+        }
+        
     }

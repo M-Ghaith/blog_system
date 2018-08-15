@@ -11,6 +11,15 @@
         <label for="exampleTextarea">Post</label>
         <textarea  name="body" class="form-control" id="exampleTextarea" rows="3"><?php echo $post['body'] ?></textarea>
     </div>
+
+    <div class="form-group">
+    <label>Which category your post belong to! </label>
+      <select name="category_id" class="form_control">
+        <?php foreach($categories as $category): ?>
+        <option value="<?=$category['id']?>"><?=$category['name']?></option>
+        <?php endforeach?>
+      </select>
+    </div>
     <button type="submit" class="btn btn-primary">Edit</button>
     </form>
     <script>CKEDITOR.replace( 'body' );</script>

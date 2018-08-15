@@ -1,6 +1,6 @@
 <dir>
-    <h2 class=".text-primary"><?=$post['title'];?></h2>
-    <small>Posted on: <?= $post['created_at'];?> &nbsp; <?=$post['edited'];?></small>
+    <h2 class=".text-primary" style="color: #0075ea"><?=$post['title'];?></h2>
+    <small>Posted on: <?= $post['created_at'];?> in <strong><?=$post['name']?></strong> &nbsp; <?=$post['edited'];?></small>
     <div>
         <p><?=$post['body'];?></p>
     </div>

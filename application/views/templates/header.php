@@ -2,18 +2,18 @@
     <head>
         <title>Blog system</title>
         <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+        <script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
     </head>
     <nav class="navbar navbar-inverse">
             <div class="container" >
                 <div class="navbar-header">
-                    <h1><a class="navbar-brand" href="#">blog</a></h1>
+                    <h1><a class="navbar-brand" href="#">Galaxy blog</a></h1>
                 </div>
-                <div id="navbar" >
-                    <ul class="nav navbar-nav">
-                        <li><a href="<?= base_url();?>">Home</a></li>
-                        <li><a href="<?= base_url();?>about">About</a></li>
-                        <li><a href="<?= base_url();?>posts">Blog</a></li>
-                    </ul>
+                <div class="nav" >
+                        <li><a href="<?= base_url();?>">Home</a></li>&nbsp;&nbsp;	
+                        <li><a href="<?= base_url();?>about">About</a></li>&nbsp; &nbsp;	
+                        <li><a href="<?= base_url();?>posts">Blog</a></li>&nbsp; &nbsp;
+                        <li><a href="<?= base_url();?>posts/create">Create post</a></li>
                 </div>
             </div>
         </nav>

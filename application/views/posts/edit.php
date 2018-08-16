@@ -1,7 +1,7 @@
 <dir>
     <h2><?=$title?></h2>
     <?php echo validation_errors(); ?>
-    <?php echo form_open('posts/update');?>
+    <?php echo form_open_multipart('posts/update');?>
     <input type="hidden" name="id" value="<?php echo $post['ID'];?>">
     <div class="form-group">
         <label for="exampleInputEmail1">Title</label>
@@ -19,6 +19,10 @@
         <option value="<?=$category['id']?>"><?=$category['name']?></option>
         <?php endforeach?>
       </select>
+    </div>
+     <!-- upload image -->
+     <div class="form-group" >
+      <input type="file" name="userfile" size="20" value="<?= site_url();?>assets/images/posts/<?=$post['post_image'];?>" />
     </div>
     <button type="submit" class="btn btn-primary">Edit</button>
     </form>

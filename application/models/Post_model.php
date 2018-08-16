@@ -18,7 +18,6 @@
 
         public function create_post($post_image){
             $slug = url_title($this->input->post('title')); 
-
             $data = array(
                 'title' => $this->input->post('title'),
                 'slug' => $slug,
@@ -33,12 +32,16 @@
         public function delete_post($id){
             $this->db->where('id', $id);
             $this->db->delete('posts');
+            $path = './assets/images/posts/'.$this->input->post('post_image_delete');
+            $this->load->helper('file');
+            delete_files($path);          
             return true;
         }
-        public function update_post(){
+
+        public function update_post($post_image){
             $id = $this->input->post('id');
             $slug = url_title($this->input->post('title'));
-            $edited = 'Edited';
+            $edited = '(Edited)';
 
             $data = array(
                 'title' => $this->input->post('title'),
@@ -46,7 +49,8 @@
                 'body' => $this->input->post('body'),
                 'created_at' => date('Y/m/d h:i:sa'),
                 'edited' => $edited,
-                'categorie_id' => $this->input->post('category_id')
+                'categorie_id' => $this->input->post('category_id'),
+                'post_image' => $post_image
             );
             $this->db->where('id', $id);
             return $this->db->update('posts', $data);

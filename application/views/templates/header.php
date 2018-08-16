@@ -13,7 +13,8 @@
                         <li><a href="<?= base_url();?>">Home</a></li>&nbsp;&nbsp;	
                         <li><a href="<?= base_url();?>about">About</a></li>&nbsp; &nbsp;	
                         <li><a href="<?= base_url();?>posts">Blog</a></li>&nbsp; &nbsp;
-                        <li><a href="<?= base_url();?>posts/create">Create post</a></li>
+                        <li><a href="<?= base_url();?>posts/create">Create post</a></li>&nbsp;&nbsp;
+                        <li><a href="<?= base_url();?>categories">Categories</a></li>
                 </div>
             </div>
         </nav>

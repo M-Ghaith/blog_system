@@ -12,12 +12,12 @@
     </div>
     <!-- Select an category -->
     <div class="form-group">
-    <label>Which category your post belong to! </label>
+    <label>Which category your post belong to! </label>&nbsp;
       <select name="category_id" class="form_control">
         <?php foreach($categories as $category): ?>
         <option value="<?=$category['id']?>"><?=$category['name']?></option>
         <?php endforeach?>
-      </select>
+      </select>&nbsp;&nbsp;or create <a href="<?= base_url();?>categories/create">new one!</a>
     </div>
     <!-- upload image -->
     <div class="form-group" >

@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <h3 style="color: #0075ea"><?= $post['title']; ?></h3>
-                <small>Posted on: <?= $post['created_at'];?> in <strong><?=$post['name']?></strong> &nbsp; <?=$post['edited'];?></small>
+                <small>Posted on: <?= $post['created_at'];?> in <a href="<?php echo site_url('/categories/posts/'.$post['id'])?>"><strong><?=$post['name']?></strong></a> &nbsp; <?=$post['edited'];?></small>
                 <p><?=word_limiter($post['body'],40);?></p>
                 <a href="<?php echo site_url('/posts/'.$post['slug']);?>">Read more</a>
             </div>

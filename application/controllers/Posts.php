@@ -52,6 +52,7 @@
                     $post_image = $_FILES['userfile']['name'];
                }
                $this->post_model->create_post($post_image);
+               $this->session->set_flashdata('post_submitted' , 'Your post has been added!');
                 redirect('posts');
             }
         }
@@ -59,6 +60,7 @@
         //Delete post method
         public function delete($id){
             $this->post_model->delete_post($id);
+            $this->session->set_flashdata('post_deleted' , 'Successfuly deleted!');
             redirect('posts');
         }
 
@@ -93,6 +95,8 @@
                  $post_image = $_FILES['userfile']['name'];
             }
             $this->post_model->update_post($post_image);
+            $this->session->set_flashdata('post_updated' , 'Your post has been updated!');
+
             redirect('posts');
         }
     }

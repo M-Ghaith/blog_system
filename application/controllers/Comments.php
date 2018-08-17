@@ -17,13 +17,13 @@
                     $this->comment_model->create_comment($post_id);
                     redirect('posts/'. $slug);
             }
-            
         }
 
         public function delete($comment_id){
             $this->comment_model->delete_comment($comment_id);
             $post_id = $this->input->post('post_id');
             $slug = $this->input->post('slug');
+            $this->session->set_flashdata('post_deleted' , 'Successfuly deleted!');
             redirect('posts/'. $slug);
         }
 

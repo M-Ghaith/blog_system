@@ -14,9 +14,27 @@
                     <li><a href="<?= base_url();?>about">About</a></li>&nbsp; &nbsp;	
                     <li><a href="<?= base_url();?>posts">Blog</a></li>&nbsp; &nbsp;
                     <li><a href="<?= base_url();?>posts/create">Create post</a></li>&nbsp;&nbsp;
-                    <li><a href="<?= base_url();?>categories">Categories</a></li>
+                    <li><a href="<?= base_url();?>categories">Categories</a></li>&nbsp;&nbsp;
+                    <li><a href="<?= base_url();?>users/register">Register</a></li>
                 </div>
             </div>
         </nav>
     <body>
-        <div class="container"  >
+    <div class="container">
+        <dir>
+            <?php if($this->session->flashdata('user_registered')): ?>
+                <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>'; ?>
+            <?php endif;?>
+            <?php if($this->session->flashdata('post_submitted')): ?>
+                <p class="alert alert-success><?php echo $this->session->flashdata('post_submitted', 30);?></p>
+            <?php endif;?>
+            <?php if($this->session->flashdata('post_updated')): ?>
+                <?php echo '<p class="alert alert-success">'.$this->session->flashdata('post_updated').'</p>'; ?>
+            <?php endif;?>
+            <?php if($this->session->flashdata('category_submitted')): ?>
+                <?php echo '<p class="alert alert-success">'.$this->session->flashdata('category_submitted').'</p>'; ?>
+            <?php endif;?>
+            <?php if($this->session->flashdata('post_deleted')): ?>
+                <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('post_deleted').'</p>'; ?>
+            <?php endif;?>
+        </dir>

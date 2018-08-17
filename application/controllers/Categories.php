@@ -20,6 +20,7 @@
                 $this->load->view('templates/footer');
             }else{
                 $this->category_model->create_category();
+                $this->session->set_flashdata('category_submitted' , 'You have added a new category!');
                 redirect('categories');
             }
         }

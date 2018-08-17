@@ -4,11 +4,11 @@
   <?php echo form_open_multipart('posts/create');?>
     <div class="form-group">
       <label for="exampleInputEmail1">Title</label>
-      <input type="text" value="<?php echo set_value('title'); ?>" class="form-control" name="title" id="exampleInputEmail1">
+      <input type="text"  required="" value="<?php echo set_value('title'); ?>" class="form-control" name="title" id="exampleInputEmail1">
     </div>
     <div class="form-group">
       <label for="exampleTextarea">Post</label>
-      <textarea name="body" value="<?php echo set_value('body'); ?>" class="form-control" id="exampleTextarea" rows="3"></textarea>
+      <textarea name="body"  required="" value="<?php echo set_value('body'); ?>" class="form-control" id="exampleTextarea" rows="3"></textarea>
     </div>
     <!-- Select an category -->
     <div class="form-group">

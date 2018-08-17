@@ -10,11 +10,11 @@
                     <h1><a class="navbar-brand" href="<?= base_url();?>posts">Galaxy blog</a></h1>
                 </div>
                 <div class="nav" >
-                        <li><a href="<?= base_url();?>">Home</a></li>&nbsp;&nbsp;	
-                        <li><a href="<?= base_url();?>about">About</a></li>&nbsp; &nbsp;	
-                        <li><a href="<?= base_url();?>posts">Blog</a></li>&nbsp; &nbsp;
-                        <li><a href="<?= base_url();?>posts/create">Create post</a></li>&nbsp;&nbsp;
-                        <li><a href="<?= base_url();?>categories">Categories</a></li>
+                    <li><a href="<?= base_url();?>">Home</a></li>&nbsp;&nbsp;	
+                    <li><a href="<?= base_url();?>about">About</a></li>&nbsp; &nbsp;	
+                    <li><a href="<?= base_url();?>posts">Blog</a></li>&nbsp; &nbsp;
+                    <li><a href="<?= base_url();?>posts/create">Create post</a></li>&nbsp;&nbsp;
+                    <li><a href="<?= base_url();?>categories">Categories</a></li>
                 </div>
             </div>
         </nav>

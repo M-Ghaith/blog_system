@@ -25,6 +25,12 @@
             <?php foreach($comments as $comment) :?>
                 <small>Commented by <strong><?=$comment['name']?></strong> at <strong><?=$comment['created_at']?></strong></small> 
                 <p><?=$comment['body']?></p>
+                <?=form_open('comments/delete/'.$comment['id'])?>
+                <input type="hidden" name="slug" value="<?=$post['slug']?>">
+
+                    <input type="hidden" name="post_id" value="<?=$comment['post_id']?>">
+                    <input type="submit" value="Delete">
+                </form>
                 <hr>
             <?php endforeach;?>
         <?php else :?>

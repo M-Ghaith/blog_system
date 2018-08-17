@@ -20,4 +20,10 @@
             $query = $this->db->get_where('comments', array('post_id' => $post_id));
             return $query->result_array();
         }
+
+        public function delete_comment($comment_id){
+            $this->db->where('id', $comment_id);
+            $this->db->delete('comments');       
+            return true;
+        }
     }

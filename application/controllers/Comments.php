@@ -19,4 +19,12 @@
             }
             
         }
+
+        public function delete($comment_id){
+            $this->comment_model->delete_comment($comment_id);
+            $post_id = $this->input->post('post_id');
+            $slug = $this->input->post('slug');
+            redirect('posts/'. $slug);
+        }
+
     }

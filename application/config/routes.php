@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+$route['comments/delete'] = 'comments/delete';
+
 
 $route['posts/create'] = 'posts/create';
 $route['posts/update'] = 'posts/update';

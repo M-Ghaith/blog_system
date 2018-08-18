@@ -3,6 +3,8 @@
     <?php echo validation_errors();?>
     <?php echo form_open('users/register')?>
     <dir>
+    <div class="row">
+    <div class="col-md-12 col-md-offset-8">
         <div class="form-group"> 
             <div class="col-md-5">
             <input name="name" type="text" placeholder="Your full name" class="form-control" required="">
@@ -33,6 +35,8 @@
                 <button type="submit"  class="btn btn-primary" required="">Yala</button>
             </div>
         </div>
-        </dir>
+        </div>
+        </div>
+    </dir>
     </form>
 </dir>

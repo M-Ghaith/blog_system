@@ -15,6 +15,7 @@
                     <li><a href="<?= base_url();?>posts">Blog</a></li>&nbsp; &nbsp;
                     <li><a href="<?= base_url();?>posts/create">Create post</a></li>&nbsp;&nbsp;
                     <li><a href="<?= base_url();?>categories">Categories</a></li>&nbsp;&nbsp;
+                    <li><a href="<?= base_url();?>users/login">Login</a></li>&nbsp;&nbsp;
                     <li><a href="<?= base_url();?>users/register">Register</a></li>
                 </div>
             </div>

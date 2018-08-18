@@ -1,4 +1,6 @@
 <dir>
+
+    <?php if(!empty($posts)){?>
     <?php foreach($posts as $post) : ?>
     <?php if($post['post_image'] == 'noimage.png'){?>
         <div class="row">
@@ -25,4 +27,19 @@
         <hr>
      <?php }?>
     <?php endforeach?>
+     <?php } else{?>
+        <dir>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>It seems there is no posts has been added in <strong><?=$title?></strong> category yet! </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="https://media.giphy.com/media/d48ub7FBCesSKzHq/source.gif" alt="">
+                </div>
+            </div>
+
+        </dir>
+     <?php }?>
 </dir>

@@ -24,6 +24,7 @@
                 'body' => $this->input->post('body'),
                 'created_at' => date('Y/m/d h:i:sa'),
                 'categorie_id' => $this->input->post('category_id'),
+                'user_id' => $this->session->userdata('user_id'),
                 'post_image' => $post_image
             );
             return $this->db->insert('posts', $data);

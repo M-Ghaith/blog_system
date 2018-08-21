@@ -1,6 +1,12 @@
 <?php 
     class Users extends CI_Controller{
 
+        function __construct()
+        {
+            parent::__construct();
+            $this->load->library('session');
+        }
+
         public function register(){
             $this->form_validation->set_rules('name', 'Name', 'required');
             $this->form_validation->set_rules('email', 'Email', 'required|callback_check_email_exists');
@@ -48,9 +54,40 @@
                 $this->load->view('users/login');
                 $this->load->view('templates/footer');
             } else {
-               $this->session->set_flashdata('user_loggedin' , 'logged in...');
-               redirect('posts');
+
+                $username = $this->security->xss_clean($this->input->post('username'));               
+                $password = $this->security->xss_clean(md5($this->input->post('password')));
+              
+                $user_id = $this->user_model->login($username, $password);
+
+                if($user_id){
+                    $user_data = array(
+                        'user_id' => $user_id,
+                        'username' => $username,
+                        'logged_in' => true
+                    );
+                    $this->load->library('session');
+                    $this->session->set_userdata($user_data);
+
+                    $this->session->set_flashdata('user_loggedin' , 'Welcome back champ ;)');
+                    redirect('posts');
+
+                }else{
+                    $this->session->set_flashdata('login_failed' , 'Failed to login, your username or password is not correct.');
+                    redirect('users/login');
+                }  
             }
-            
+        }
+
+        public function logout()
+        {
+            $user_data = array (
+                'username',
+                'user_id',
+                'logged_in'
+            );
+            $this->session->unset_userdata($user_data);
+            $this->session->set_flashdata('user_loggedout' , 'Bye, see you soon!');
+            redirect('home');
         }
     }

@@ -24,6 +24,10 @@
 
         // Create Post and upload image method
         public function create(){
+            if(!$this->session->userdata('logged_in')){
+                $this->session->set_flashdata('control_create_post' , 'You must be logged in to create posts!');
+                redirect('users/login');
+            }
             $data['title'] = "This creata Methods";
             $data['categories'] = $this->post_model->get_categories();
 
@@ -70,6 +74,12 @@
             if(empty($data['post'])){
                 show_404();
             }
+            
+            $user_id = $this->post_model->get_posts($slug)['user_id'];
+            if($this->session->userdata('user_id') != $user_id  ){
+               redirect('posts');
+            }
+
             $data['categories'] = $this->post_model->get_categories();
             $data['title'] = "Edit post";
             $this->load->view('templates/header');

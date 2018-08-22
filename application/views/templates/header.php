@@ -2,6 +2,7 @@
     <head>
         <title>Blog system</title>
         <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
         <script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
     </head>
     <nav class="navbar navbar-inverse" style="background-color: #90e0ed">
